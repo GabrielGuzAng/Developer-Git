@@ -5,10 +5,11 @@ from botocore.vendored import requests
 def lambda_handler(event,context):
 	telegram_token = os.environ['TELEGRAM_TOKEN']
 
-	api_url = f"https://api.telegram.org(telegram_token)/"
+	api_url = f"https://api.telegram.org{telegram_token}/"
+	telegram_msg="Hi! May i help you?"
 
 	params = {'chat_id': chat_id, 'text':telegram_msg}
-	res = requests.post(f"(api_url)sendMessage",data=params).json()
+	res = requests.post(f"{api_url}sendMessage",data=params).json()
 
 	if res["ok"]:
 		return{
