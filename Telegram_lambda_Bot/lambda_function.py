@@ -7,6 +7,7 @@ def lambda_handler(event,context):
 
 	api_url = f"https://api.telegram.org{telegram_token}/"
 	telegram_msg="Hi! May i help you?"
+	chat_id=os.environ['CHAT_ID']
 
 	params = {'chat_id': chat_id, 'text':telegram_msg}
 	res = requests.post(f"{api_url}sendMessage",data=params).json()
