@@ -1,11 +1,11 @@
 import json
 import os
-from botocore.vendored import requests
+import requests
 
 def lambda_handler(event,context):
 	telegram_token = os.environ['TELEGRAM_TOKEN']
 
-	api_url = f"https://api.telegram.org{telegram_token}/"
+	api_url = f"https://api.telegram.org/bot{telegram_token}/"
 	telegram_msg="Hi! May i help you?"
 	chat_id=os.environ['CHAT_ID']
 
