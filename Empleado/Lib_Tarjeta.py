@@ -1,10 +1,24 @@
 # -*- coding: utf-8 -*-
 
 
-class Tarjeta():
-    def __init__(self,numero):
-        self.numero=numero
+# Lib_Tarjeta.py
+class Card():
+    def __init__(self, number):
+        self.number = number
         
-    def fichar(self):
-        print(f"Fichando con tarjeta número {self.numero}")
-    
+        
+
+    def validate_number(self, number):
+        # Check if the number is a valid number
+        try:
+            int(number)
+            return True
+        except ValueError:
+            return False
+
+    def clock_in(self):
+        if(self.validate_number(self.number)):
+            print(f"Clocking in with card number {self.number}")
+        else:
+            print(f"Error: Invalid card number {self.number}")
+        return self.validate_number(self.number)

@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 
-class Empleado:
-    def __init__(self,nombre,tarjeta):
-        self.nombre=nombre
-        self.tarjeta=tarjeta
-        
-    def fichar(self):
-        self.tarjeta.fichar()
-        
+class Employee:
+    def __init__(self, name, card):
+        self.name = name
+        self.card = card
+
+    def clock_in(self):
+        return self.card.clock_in()
